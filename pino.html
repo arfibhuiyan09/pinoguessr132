@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pino App</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+        font-family: 'Blacknorthdemo-mLE25';
+      }
+  
+      .black-north-text {
+        font-size: 20px;
+        color: #000;
+        text-align: left;
+        margin: 20px;
+        font-weight: bold;
+      }
+  
+      .pino {
+        font-size: 24px;
+        font-weight: bold;
+        color: #000;
+        margin-top: -500px;
+        animation: rotateHeader 30s linear infinite;
+      }
+  
+      .nopino {
+        font-size: 24px;
+        font-weight: bold;
+        color: #000;
+        margin-top: -500px;
+        animation: rotateheader 30s linear infinite;
+      }
+  
+      .whyarethemajorsblack {
+        background-color: #fff;
+      }
+  
+      @keyframes rotateHeader {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+  
+      @keyframes rotateheader {
+        from {
+          transform: rotate(360deg);
+        }
+        to {
+          transform: rotate(0deg);
+        }
+      }
+  
+      .piano-container {
+        display: flex;
+        margin-top: 20px;
+      }
+  
+      .piano {
+        display: flex;
+        margin-left: -300px; /* Add this line to move the piano 100px to the right */
+      }
+  
+      .key {
+        position: relative;
+        width: 50px;
+        cursor: pointer;
+        margin: 0 5px;
+        transition: transform 0.1s ease-out;
+      }
+  
+      .white {
+        height: 200px;
+        border: 1px solid #000;
+        background-color: #fff;
+      }
+  
+      .black {
+        height: 150px;
+        background-color: #000;
+        color: #fff;
+        position: relative;
+        z-index: 1;
+        margin-left: -25px;
+        margin-right: -25px;
+        width: 30px;
+      }
+  
+      .label {
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #000;
+      }
+  
+      .key:hover {
+        transform: scale(1.1);
+      }
+  
+      .key:active {
+        transform: scale(0.9);
+      }
+  
+      .pino-right {
+        font-size: 15px;
+        color: #000;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        text-align: right;
+      }
+  
+      .pino-left {
+        font-size: 15px;
+        color: #000;
+        position: absolute;
+        top: 0px;
+        right: 1400px;
+        text-align: right;
+      }
+  
+      .tbp {
+        font-size: 15px;
+        color: #000;
+        position: absolute;
+        text-align: right;
+        margin-top: 350px; /* Adjust margin as needed */
+        font-weight: bold;
+      }
+  
+      .pino-left {
+        font-size: 15px;
+        color: #000;
+        position: absolute;
+        top: 0px;
+        right: 1400px;
+        text-align: right;
+      }
+  
+      .tincan {
+        font-size: 15px;
+        color: #000;
+        position: absolute;
+        text-align: right;
+        margin-top: 3px; /* Adjust margin as needed */
+        font-weight: bold;
+      }
+  
+      .tincan {
+        margin-top: 10px;
+      }
+  
+      button {
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #545b62;
+        color: white;
+        border: none;
+        border-radius: 4px;
+      }
+  
+      button:hover {
+        background-color: #545b62;
+      }
+  
+      button:active {
+        background-color: #545b62;
+      }
+  
+      .animated-text {
+        display: inline-block;
+        animation: bounce 1s infinite alternate;
+      }
+  
+      @keyframes bounce {
+        from {
+          transform: translateY(0);
+        }
+        to {
+          transform: translateY(-5px);
+        }
+      }
+  
+      #distortButton {
+        padding: 10px 15px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #545b62;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        transition: transform 0.2s ease-out;
+      }
+  
+      #distortButton:hover {
+        background-color: #545b62;
+      }
+  
+      #distortButton:active {
+        transform: scale(0.9);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="pino-right" id="keyManual">
+      <div class="black-north-text">
+        <p>Welcome to Pino!</p>
+        <p>This is a Pino app where you play Pino.</p>
+        <p>(COMPLETELY DIFFERENT THAN PIANO)</p>
+        <hr>
+        <p>Pino Keys:</p>
+        <ul>
+          <li>C - 2 people scream</li>
+          <li>C# - German man dies</li>
+          <li>D - Soviet man changing into a fascist</li>
+          <li>D# - Everybody wanna be a superstar!</li>
+          <li>E - Free Robux</li>
+          <li>F - 1945 in Germany</li>
+          <li>F# - Grilled cheese Obama sandwich</li>
+          <li>G - Skibidiness</li>
+          <li>G# - 1,2 buckle shoe</li>
+          <li>A - World Cup</li>
+          <li>A# - Happy Birthday!</li>
+          <li>B - Exit</li>
+        </ul>
+        <p>Classics:</p>
+        <ul>
+          <li>C, D, D#, F#, G#, A, A#</li>
+        </ul>
+        <p>New:</p>
+        <ul>
+          <li>C#, E, F, G</li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="unique-sound-effects">
+      <p>Unique Sound Effects:</p>
+      <ul>
+        <li>Custom sound effect 1 - Triggered by a specific key or gesture</
