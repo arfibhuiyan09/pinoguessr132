@@ -63,17 +63,25 @@
             color: #282c34; /* Dark background color */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
+        #note-input {
+            font-size: 16px;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+        }
     </style>
     <title>Piano Memory Guessing Game - Easy</title>
 </head>
 <body>
     <div id="game-container">
-        <h1>Pinoguessr</h1>
-        <p id="message">Welcome to Pinoguessr, press start to start, memorize the keys, then type!</p>
+        <h1>Piano Memory Guessing Game</h1>
+        <p id="message">Try to remember the sequence!</p>
         <div id="sequence-container"></div>
-        <input type="text" id="input-box" placeholder="Enter the sequence">
         <button onclick="startGame()">Start Game</button>
+        <input type="text" id="note-input" placeholder="Enter your guess" />
         <button onclick="checkSequence()">Check My Guess</button>
+
+        <!-- Navigation buttons -->
         <div>
             <button onclick="window.location.href='pinoguessr_hard.html'">pinoguessr-hard</button>
             <button onclick="window.location.href='pino.html'">pino app</button>
@@ -81,6 +89,9 @@
     </div>
 
     <script>
+        let sequence = [];
+        let userSequence = [];
+        let level = 1;
         const pianoNotes = {
             'A': 'sounds/a.wav',
             'B': 'sounds/b.wav',
@@ -90,19 +101,9 @@
             'F': 'sounds/f.wav'
         };
 
-        let sequence = [];
-        let userSequence = [];
-        let level = 1;
-
         function startGame() {
             sequence = generateSequence(level);
-            showRoundInfo();
             showSequence();
-        }
-
-        function showRoundInfo() {
-            const roundInfo = document.getElementById('round-info');
-            roundInfo.innerText = `Round: ${level}`;
         }
 
         function generateSequence(length) {
@@ -122,9 +123,6 @@
                 i++;
                 if (i >= sequence.length) {
                     clearInterval(interval);
-                    setTimeout(() => {
-                        document.getElementById('sequence-container').innerText = '';
-                    }, 500);
                 }
             }, 1000 * 1.5);
         }
@@ -138,7 +136,7 @@
             const sequenceContainer = document.getElementById('sequence-container');
             const noteElement = document.createElement('div');
             noteElement.innerHTML = note;
-            noteElement.className = 'highlight';
+            noteElement.className = `highlight`;
 
             sequenceContainer.appendChild(noteElement);
 
@@ -147,7 +145,7 @@
             }, 500);
         }
 
-        function checkAnswer() {
+        function checkSequence() {
             const userInput = document.getElementById('note-input').value.toUpperCase().split(' ');
             userSequence = userInput;
 
@@ -165,6 +163,8 @@
         function arraysEqual(arr1, arr2) {
             return JSON.stringify(arr1) === JSON.stringify(arr2);
         }
+
+    
     </script>
 </body>
 </html>
