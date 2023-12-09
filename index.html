@@ -63,68 +63,6 @@
             color: #282c34; /* Dark background color */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
-
-        input {
-            font-size: 16px;
-            padding: 10px;
-            margin: 10px;
-            border: 2px solid #61dafb; /* Border color - React Blue */
-            border-radius: 5px;
-        }
-
-         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        button {
-            padding: 10px 15px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #545b62;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            margin: 10px;
-        }
-
-        button:hover {
-            background-color: #545b62;
-        }
-
-        button:active {
-            background-color: #545b62;
-        }
-
-         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        button {
-            padding: 10px 15px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #545b62;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            margin: 10px;
-        }
-
-        button:hover {
-            background-color: #545b62;
-        }
-
-        button:active {
-            background-color: #545b62;
-        }
     </style>
     <title>Piano Memory Guessing Game - Easy</title>
 </head>
@@ -136,9 +74,11 @@
         <input type="text" id="input-box" placeholder="Enter the sequence">
         <button onclick="startGame()">Start Game</button>
         <button onclick="checkSequence()">Check My Guess</button>
-        <button onclick="window.location.href='piano-app/index.html'">Piano App</button>
-    <button onclick="window.location.href='pinoguessr-app/index.html'">Pino Guessr App</button>
-    <button onclick="window.location.href='pino-app/index.html'">Pino App</button>
+        <div>
+            <button onclick="window.location.href='piano-app/index.html'">Piano App</button>
+            <button onclick="window.location.href='pinoguessr-app/index.html'">Pino Guessr App</button>
+            <button onclick="window.location.href='pino-app/index.html'">Pino App</button>
+        </div>
     </div>
 
     <script>
